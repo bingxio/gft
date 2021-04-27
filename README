@@ -1,0 +1,7 @@
+
+        gft: A Go language tab formatting tool.
+             Format a file or all .go files in a directory.
+
+        > usage: gft <file | path>
+
+             GPL 3.0 License
