@@ -1,29 +1,34 @@
+GFT, A Go language tab formatting tool.
 
-        gft: A Go language tab formatting tool.
-             Format a file or all .go files in a directory.
+- Replace all tabs in the go file with Spaces
+- Default is 4 Spaces
 
-        > usage: gft <file | path>
-                 gft v # SHOW VERSION
+Before:
 
-             GPL 3.0 License
+func foo() {
+        for i := 0; i < 100; i++ {
+                println(i)
+        }
+}
 
-        <LoadArgument> -> <SingleFile   |  MultipleFiles>
-                                |               |
-                                v               v
-                           <LexIdent>   <~  <GoFiles>
-                                |
-                                v
-                           <WriteFile>
-                                |
-                                v
-                              <END>
+After:
 
-          1. Parse all TAB position into positions slice.
-          2. Write file, bit to bit way to write.
-          3. When a position exists, four spaces are inserted.
+func foo() {
+    for i := 0; i < 100; i++ {
+        println(i)
+    }
+}
 
-        You can download the release file directly or compile it by yourself:
+Install:
 
-          > go build -ldflags -w gft.go
+    > g++ -std=c++17 -Os gft.cc -o gft
+    > upx gft
 
-        Download page: <https://gft.bingxio.fun/>
+Or go to download page: https://gft.bingxio.fun/
+
+Usage:
+
+    > gft <FILE | DIR> | <Spaces>
+    > gft v
+
+GPL 3.0 License
