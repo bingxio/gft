@@ -3,5 +3,27 @@
              Format a file or all .go files in a directory.
 
         > usage: gft <file | path>
+                 gft v # SHOW VERSION
 
              GPL 3.0 License
+
+        <LoadArgument> -> <SingleFile   |  MultipleFiles>
+                                |               |
+                                v               v
+                           <LexIdent>   <~  <GoFiles>
+                                |
+                                v
+                           <WriteFile>
+                                |
+                                v
+                              <END>
+
+          1. Parse all TAB position into positions slice.
+          2. Write file, bit to bit way to write.
+          3. When a position exists, four spaces are inserted.
+
+        You can download the release file directly or compile it by yourself:
+
+          > go build -ldflags -w gft.go
+
+        Download page: <https://gft.bingxio.fun/>
