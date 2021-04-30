@@ -52,6 +52,17 @@ std::vector<std::string> *load_file(std::string p) {
     return files;
 }
 
+// Return the count of target in vector
+inline int count(std::vector<int> vec, int tar) {
+    int count = 0;
+    for (auto i : vec) {
+        if (i == tar) {
+            count++;
+        }
+    }
+    return count;
+}
+
 // Written to the file
 void write_file(
     std::string p,              /* File path */
@@ -64,7 +75,7 @@ void write_file(
         error("failed to open will be read or written of file");
     }
     for (int i = 0; i < chars.size() - 1; i++) {
-        if (std::count(positions.begin(), positions.end(), i)) {
+        if (count(positions, i)) {
             /* Spaces */
             for (int k = 0; k < spaces; k++) {
                 ofs << " ";
